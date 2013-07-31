@@ -13,27 +13,27 @@ module RailsResponsiveAppTheme
 
     def copy_layout
       return if options.no_layout
-      admin_layout_name = options.layout_type == 'sign' ? "layout_sign.html.erb" : "layout_admin.html.erb"
+      layout_name = "layout.html.erb"
       case options.engine
       when 'erb'
-        template  admin_layout_name, "app/views/layouts/#{layout_name.underscore}.html.erb"
+        template  layout_name, "app/views/layouts/#{layout_name.underscore}.html.erb"
       when 'haml'
-        generate_haml_layout(admin_layout_name)
+        generate_haml_layout(layout_name)
       end
     end
 
     def copy_theme_stylesheet
-      template "web_app_theme.css.erb", "app/assets/stylesheets/web_app_theme.css"
+      template "main.css.erb", "app/assets/stylesheets/main.css"
     end
 
   protected
 
-    def generate_haml_layout(admin_layout_name)
+    def generate_haml_layout(layout_name)
       require 'haml'
-      Dir.mktmpdir('web-app-theme-haml') do |haml_root|
-        tmp_html_path = "#{haml_root}/#{admin_layout_name}"
-        tmp_haml_path = "#{haml_root}/#{admin_layout_name}.haml"
-        template admin_layout_name, tmp_html_path, :verbose => false
+      Dir.mktmpdir('responsive-haml') do |haml_root|
+        tmp_html_path = "#{haml_root}/#{layout_name}"
+        tmp_haml_path = "#{haml_root}/#{layout_name}.haml"
+        template layout_name, tmp_html_path, :verbose => false
         `html2haml --erb --xhtml #{tmp_html_path} #{tmp_haml_path}`
         copy_file tmp_haml_path, "app/views/layouts/#{layout_name.underscore}.html.haml"
       end

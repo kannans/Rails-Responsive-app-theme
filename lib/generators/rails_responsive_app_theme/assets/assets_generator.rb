@@ -5,7 +5,7 @@ module RailsResponsiveAppTheme
     class_option :theme,        :type => :string,   :default => :default,   :desc => 'Specify the layout theme to be copied'
 
     def copy_stylesheets
-      copy_file "stylesheets/responsive/theme/base.css"                , "app/assets/stylesheets/responsive/base.css"
+      copy_file "stylesheets/responsive/theme/main.css"                , "app/assets/stylesheets/responsive/main.css"
       directory "stylesheets/responsive/themes/#{options.theme}" , "app/assets/stylesheets/responsive/themes/#{options.theme}"
     end
 
