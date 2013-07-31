@@ -10,7 +10,9 @@
     <title>Cleanizr</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0">
-
+  <%= javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"%>
+    <%= stylesheet_link_tag "application", :media => "all"%>
+    <%= javascript_include_tag "application"%>
 </head>
 <body>
 
@@ -33,7 +35,7 @@
 
                 <div class="container-fluid">
                      <div class="row-fluid">
-
+                        <%= yield%>
                     </div>
                 </div>
 
