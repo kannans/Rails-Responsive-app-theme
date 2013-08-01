@@ -8,9 +8,9 @@ module RailsResponsiveAppTheme
       copy_file "main.css"          , "app/assets/theme/main.css"
       copy_file "bg.css"            , "app/assets/theme/customize.css"
       copy_file "bootstrap.css"     , "app/assets/theme/bootstrap.css"
-      copy_file "bootstrap-responsive.min.css", "app/assets/bootstrap-responsive.min.css"
+      copy_file "responsive.css"    , "app/assets/responsive.css"
 
-      directory "responsive/themes/#{options.theme}" , "app/assets/stylesheets/responsive/themes/#{options.theme}"
+      directory "#{options.theme}"  , "app/assets/stylesheets/themes/#{options.theme}"
     end
 
     def copy_images
