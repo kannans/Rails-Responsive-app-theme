@@ -6,7 +6,7 @@ module RailsResponsiveAppTheme
     class_option :stylesheet, :type => :boolean, :default => true, :description => "Include stylesheet file"
 
     def generate_layout
-      copy_file "base.css", "app/assets/responsive/theme/stylesheets/#{file_name}.css" if options.stylesheet?
+      copy_file "base.css", "app/assets/stylesheets/#{file_name}.css" if options.stylesheet?
       template "layout.html.erb", "app/views/layouts/#{file_name}.html.erb"
     end
 
