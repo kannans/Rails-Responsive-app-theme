@@ -7,6 +7,7 @@ module RailsResponsiveAppTheme
 
     def generate_layout
       copy_file "base.css", "app/assets/responsive/theme/stylesheets/#{file_name}.css" if options.stylesheet?
+      copy_file "main.css", "app/assets/responsive/theme/stylesheets/main.css" if options.stylesheet?
       template "layout.html.erb", "app/views/layouts/#{file_name}.html.erb"
     end
 
