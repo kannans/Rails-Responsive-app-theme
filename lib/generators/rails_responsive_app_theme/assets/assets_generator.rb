@@ -4,16 +4,16 @@ module RailsResponsiveAppTheme
     source_root File.expand_path('../templates', __FILE__)
 
     def copy_stylesheets
-      copy_file "main.css"          , "app/assets/theme/main.css"
-      copy_file "bg.css"            , "app/assets/theme/customize.css"
-      copy_file "bootstrap.css"     , "app/assets/theme/bootstrap.css"
-      copy_file "responsive.css"    , "app/assets/responsive.css"
+      copy_file "main.css"          , "app/assets/stylesheets/theme/main.css"
+      copy_file "bg.css"            , "app/assets/stylesheets/theme/customize.css"
+      copy_file "bootstrap.css"     , "app/assets/stylesheets/theme/bootstrap.css"
+      copy_file "responsive.css"    , "app/assets/stylesheets/theme/responsive.css"
 
-#      directory "#{options.theme}"  , "app/assets/stylesheets/themes/#{options.theme}"
+      # directory "#{options.theme}"  , "app/assets/stylesheets/themes/#{options.theme}"
     end
 
     def copy_images
- #     directory "images/responsive/themes/#{options.theme}"      , "app/assets/images/responsive/themes/#{options.theme}"
+  #     directory "images/responsive/themes/#{options.theme}"      , "app/assets/images/responsive/themes/#{options.theme}"
     end
 
   end
